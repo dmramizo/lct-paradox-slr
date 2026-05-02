@@ -1,0 +1,38 @@
+# RStudio
+.Rproj.user/
+.Rhistory
+.RData
+.Ruserdata
+
+# renv
+renv/library/
+renv/local/
+renv/cellar/
+renv/python/
+renv/staging/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Editors
+.vscode/
+.idea/
+
+# Sensitive
+*.env
+credentials/
+
+# Large raw data exports (keep locally, do not upload)
+search/exports_raw/*.ris
+search/exports_raw/*.bib
+search/exports_raw/*.csv
+!search/exports_raw/.gitkeep
+
+# Source articles (copyright)
+screening/full_texts/*.pdf
+!screening/full_texts/.gitkeep
+
+# ASReview project files (large, regenerable)
+screening/asreview_projects/*.asreview
+!screening/asreview_projects/.gitkeep

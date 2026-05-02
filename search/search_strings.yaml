@@ -1,0 +1,105 @@
+# Search Strategy
+# Project: The low-carbon transition paradox
+# Status: v0.1 — pre-pilot draft, May 2026
+# Will be locked as v1.0 after pilot search calibration in mid-May
+
+databases:
+  - name: Web of Science Core Collection
+    fields_searched: [Title, Abstract, Author Keywords, Keywords Plus]
+  - name: Scopus
+    fields_searched: [Article Title, Abstract, Keywords]
+
+date_range:
+  start: 2000-01-01
+  end: 2026-12-31
+
+language: English
+
+# ===================================================================
+# CORPUS A — Sustainability-oriented trade
+# ===================================================================
+
+corpus_A:
+  description: >
+    Captures empirical and theoretical work on green trade, circular
+    trade, and environmental goods trade in relation to environmental
+    or development outcomes.
+
+  boolean_string_wos: |
+    TS=(("green trade" OR "green goods" OR "environmental goods"
+         OR "low-carbon trade" OR "clean technology trade"
+         OR "circular trade" OR "secondary materials trade"
+         OR "recycled materials trade" OR "waste trade"
+         OR "remanufactured goods")
+       AND
+        ("environmental*" OR "ecological footprint" OR "carbon emission*"
+         OR "CO2 emission*" OR "pollution" OR "economic complexity"
+         OR "productive capabilit*" OR "industrial capabilit*"
+         OR "economic growth" OR "development"))
+
+  boolean_string_scopus: |
+    TITLE-ABS-KEY(("green trade" OR "green goods" OR "environmental goods"
+         OR "low-carbon trade" OR "clean technology trade"
+         OR "circular trade" OR "secondary materials trade"
+         OR "recycled materials trade" OR "waste trade"
+         OR "remanufactured goods")
+       AND
+        ("environmental*" OR "ecological footprint" OR "carbon emission*"
+         OR "CO2 emission*" OR "pollution" OR "economic complexity"
+         OR "productive capabilit*" OR "industrial capabilit*"
+         OR "economic growth" OR "development"))
+
+# ===================================================================
+# CORPUS B — Critical minerals in clean energy technologies
+# ===================================================================
+
+corpus_B:
+  description: >
+    Captures economics, industrial organization, policy, and trade
+    work on processed critical minerals as inputs to clean energy
+    technology manufacturing.
+
+  boolean_string_wos: |
+    TS=(("critical mineral*" OR "rare earth*" OR "REE" OR "lithium"
+         OR "cobalt" OR "nickel" OR "graphite" OR "manganese"
+         OR "platinum group metal*")
+       AND
+        ("processing" OR "refining" OR "midstream" OR "value chain"
+         OR "supply chain" OR "concentration" OR "industrial polic*"
+         OR "entry barrier*" OR "capabilit*"))
+
+  boolean_string_scopus: |
+    TITLE-ABS-KEY(("critical mineral*" OR "rare earth*" OR "REE"
+         OR "lithium" OR "cobalt" OR "nickel" OR "graphite"
+         OR "manganese" OR "platinum group metal*")
+       AND
+        ("processing" OR "refining" OR "midstream" OR "value chain"
+         OR "supply chain" OR "concentration" OR "industrial polic*"
+         OR "entry barrier*" OR "capabilit*"))
+
+# ===================================================================
+# Pilot search calibration
+# ===================================================================
+
+calibration:
+  target_corpus_size_post_dedup:
+    corpus_A: 1000-2500
+    corpus_B: 800-2000
+  if_too_large:
+    - tighten outcome terms in Corpus A
+    - add explicit trade-related terms to Corpus B
+  if_too_small:
+    - add channel-specific terms (export, import) to Corpus A
+    - broaden mineral list in Corpus B
+
+# ===================================================================
+# Seed sets for ASReview
+# ===================================================================
+# Twenty-five known-relevant papers per corpus, used to train the
+# active-learning classifier. To be completed before screening begins.
+
+seed_set_corpus_A:
+  - "TODO: complete 25 papers from existing dissertation references"
+
+seed_set_corpus_B:
+  - "TODO: complete 25 papers from Essay 3 references"
