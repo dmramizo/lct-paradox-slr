@@ -6,7 +6,7 @@ technologies
 
 **Author:** Dorothea Ramizo, Curtin University
 
-**Protocol finalized:** [today's date]
+**Protocol finalized:** 03 May 2026
 
 **Repository commit:** This file's commit hash on this date is the
 authoritative timestamp of the finalized protocol. Any modification
