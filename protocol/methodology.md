@@ -6,7 +6,7 @@ technologies
 
 **Author:** Dorothea Ramizo, Curtin University
 
-**Protocol finalized:** [today's date]
+**Protocol finalized:** 03 May 2026
 
 **Repository commit:** This file's commit hash on this date is the
 authoritative timestamp of the finalized protocol. Any modification
@@ -156,7 +156,36 @@ inter-rater reliability.
 **Full-text screening:** solo, with documented exclusion reasons for
 every excluded paper, recorded in `screening/decisions.csv`.
 
-## 8. Coding rubric
+**PRISMA 2020 Item 9 deviation declared.** PRISMA 2020 Item 9
+recommends that data extraction and screening decisions be
+conducted independently in duplicate by two reviewers to mitigate
+single-reviewer error. This review is conducted by a sole reviewer
+(D. Ramizo) due to the doctoral dissertation context, in which a
+co-screener is not available. The intra-rater reliability check
+described above (15% sample re-screened after a 10-day washout
+period, with Cohen's κ reported) is used as a partial substitute
+for inter-rater agreement. This deviation from PRISMA-preferred
+practice is acknowledged here and declared as a methodological
+limitation in §12.
+
+## 8. Risk of bias assessment
+
+Risk of bias assessment is not conducted at the individual study
+level. The review's purpose is to map coverage and engagement
+patterns across the included literature, not to synthesize
+empirical findings or generate effect estimates. Individual study
+bias does not affect mapping outcomes in the way it affects pooled
+estimates in meta-analytic syntheses. Methodological quality of
+included studies is, however, captured indirectly through the
+`methodology_category` coding variable (Corpus A) and the
+`concentration_treatment` coding variable (Corpus B), both of
+which document the analytical depth at which each study addresses
+its subject matter.
+
+This decision corresponds to PRISMA 2020 Item 11 and is declared
+explicitly to satisfy that item's reporting requirement.
+
+## 9. Coding rubric
 
 The coding rubric is documented in `extraction/coding_rubric.md` with
 worked examples for each variable and engagement category.
@@ -201,7 +230,7 @@ Worked examples of each engagement category are committed to
 `extraction/coding_rubric.md` before coding begins. The rubric is
 not modified after coding starts.
 
-## 9. Bibliometric analysis
+## 10. Bibliometric analysis
 
 **Software:** R, primarily the `bibliometrix` package (Aria &
 Cuccurullo) for co-citation, bibliographic coupling, and keyword
@@ -211,7 +240,35 @@ computed from merged reference lists.
 **PRISMA 2020 flow diagram:** generated from final counts using the
 `PRISMA2020` R package (Haddaway et al.).
 
-## 10. Scope of claims
+**Missing data handling.** Where bibliographic metadata are
+incomplete (missing DOI, abstract, author affiliations, keywords,
+or reference lists), the affected fields are coded as missing in
+the analytical dataset. Analyses requiring those specific fields
+exclude the affected records, and reduced sample sizes are
+reported alongside the relevant analytical output. No imputation
+is performed.
+
+**Heterogeneity handling.** The included literature is expected to
+be heterogeneous in conceptual frameworks, methodological
+approaches, outcome operationalizations, and country-context
+focus. This heterogeneity is documented through the coding
+variables specified in §9 and is reported in Section 3 of the
+chapter as part of the descriptive map of each corpus. Because
+the review's purpose is to characterize this heterogeneity rather
+than to control for it or pool across it, no analytical correction
+is applied. This decision corresponds to PRISMA 2020 Item 13.
+
+**Certainty assessment.** GRADE-style certainty assessment (PRISMA
+2020 Item 15) is designed to grade the certainty of evidence
+underlying effect estimates in meta-analytic syntheses. Mapping
+reviews characterize the structure and coverage of literature
+rather than synthesize effect estimates, and GRADE is therefore
+not applicable to this review's outcomes. Findings are reported
+descriptively without certainty grades. This decision is consistent
+with practice in published mapping and scoping reviews where
+GRADE is not appropriate to the review type.
+
+## 11. Scope of claims
 
 This review is designed to establish:
 
@@ -235,10 +292,33 @@ at substantive depth, the contribution claim is revised to "extending
 [identified work] by [specified additions]" rather than withdrawn or
 overstated.
 
-## 11. Limitations declared in advance
+## 12. Limitations declared in advance
+
+**Reporting and publication biases.** The review is subject to
+several reporting biases inherent to systematic searches of
+indexed peer-reviewed literature. The English-language and
+peer-reviewed-only inclusion criteria exclude work published in
+other languages, in grey literature, in policy reports, and in
+non-indexed venues. Critical minerals economics in particular has
+substantial relevant scholarship in Chinese-language sources, in
+policy literature from international agencies (IEA, USGS, World
+Bank, IRENA), and in industry analyses, none of which enters the
+systematic search. The bibliometric component of the analysis is
+additionally subject to citation patterns that may underweight
+recent work (insufficient elapsed time for citations to accumulate)
+and overweight English-language and Western-indexed venues. These
+biases are not corrected for analytically. They are flagged here
+in advance, addressed where relevant in the chapter's discussion
+section, and constitute the principal external validity boundary
+on the review's findings. This statement corresponds to PRISMA
+2020 Item 14.
+
+The following methodological choices, made for reasons of feasibility,
+scope, or evidence-base appropriateness, are also declared as
+limitations:
 
 - Solo screening rather than dual screening; intra-rater reliability
-  is a weaker check than inter-rater
+  is a weaker check than inter-rater (see §7)
 - Two databases only (WoS, Scopus)
 - English language only
 - Grey literature excluded from main analysis; selected grey
@@ -250,7 +330,7 @@ overstated.
   reproducibility depends on the rubric and worked examples rather
   than on coder training
 
-## 12. Data and code availability
+## 13. Data and code availability
 
 All search outputs (where licensing permits), screening decisions
 (with exclusion reasons), coding spreadsheets, and analysis code are
@@ -258,7 +338,7 @@ deposited in this repository. Source articles are not redistributed
 (copyright). Bibliographic metadata, citation graphs, screening
 decisions, and coding outcomes are public.
 
-## 13. Deviations log
+## 14. Deviations log
 
 Any deviation from this protocol after the commit date of this file
 is recorded in `protocol/deviations.md` with date, change, and

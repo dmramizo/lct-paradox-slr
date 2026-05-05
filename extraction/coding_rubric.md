@@ -8,7 +8,7 @@ energy technologies
 **Last updated:** [today's date]
 
 This rubric is the operational counterpart to `protocol/methodology.md`
-§8. It specifies the decision rules and worked examples that govern
+§9. It specifies the decision rules and worked examples that govern
 how each included paper is coded. The rubric is locked at the commit
 date of this file. Any modification after that date is recorded in
 `protocol/deviations.md` with date, change, and rationale.

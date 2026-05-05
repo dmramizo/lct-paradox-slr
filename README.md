@@ -1,4 +1,4 @@
-# The Low-Carbon Transition Paradox: A Systematic Review
+# The Low-Carbon Transition Paradox: A Systematic Literature Review
 
 A systematic review of two literatures — sustainability-oriented trade,
 and critical minerals as inputs to clean energy technologies — and
